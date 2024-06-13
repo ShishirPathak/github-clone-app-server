@@ -8,6 +8,9 @@ const expressApp = express();
 expressApp.use(express.json());
 expressApp.use(cors());
 
+
+const port = process.env.PORT || 3001;
+
 // expressApp.post("/clone", async (req, res) => {
 //   console.log("clone called");
 //   const { username, repo, clonePath } = req.body;
@@ -69,6 +72,6 @@ expressApp.get("/select-folder", async (req, res) => {
   }
 });
 
-expressApp.listen(3001, () => {
-  console.log("Server running on http://localhost:3001");
+expressApp.listen(port, () => {
+  console.log(`Server running at port http://localhost:${port}!`)
 });
