@@ -11,22 +11,6 @@ expressApp.use(cors());
 
 const port = process.env.PORT || 3001;
 
-// expressApp.post("/clone", async (req, res) => {
-//   console.log("clone called");
-//   const { username, repo, clonePath } = req.body;
-//   const gitUrl = `https://github.com/${username}/${repo}.git`;
-//   const localPath = path.resolve(clonePath);
-//   console.log("Received POST request with data:", req.body); // Log request body
-//   console.log("gitUrl", gitUrl);
-//   try {
-//     await simpleGit().clone(gitUrl, localPath);
-//     res.status(200).send("Repository cloned successfully");
-//   } catch (error) {
-//     console.log("error",error)
-//     res.status(500).send("Failed to clone repository");
-//   }
-// });
-
 expressApp.post("/clone", async (req, res) => {
     console.log("clone called");
     const { username, repo, clonePath } = req.body;
